@@ -53,6 +53,7 @@ app.post("/login", async (req, res) => {
     }
 });
 
+
 // Verificação TOKEN valido
 app.get("/teste-token" , (req,res) => {
     const authHeader = req.headers.authorization;
@@ -87,7 +88,6 @@ app.get("/teste-token" , (req,res) => {
 });
 
 
-
 // Validação TOKEN
 app.post("/validar", async (req,res) => {
     const {email, token} = req.body;
@@ -114,6 +114,7 @@ const token = function() {
     let token = Math.random().toString(36).substring(2);
     return token;
 }
+
 
 app.listen(port, () => {
     console.log(`Servidor rodando em http://localhost:${port}`);
